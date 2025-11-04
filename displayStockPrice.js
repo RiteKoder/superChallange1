@@ -6,14 +6,15 @@ let symbolWithPrice = "";
 
 const id = setInterval(() => {
   let { price: nowPrice, time } = getStockPrice();
-  // nowPrice = getStockPrice().price
-  if (nowPrice > price) {
-    symbolWithPrice = nowPrice + " Up";
-  } else {
-    symbolWithPrice = nowPrice + " Down";
-  }
+
+  //   if (nowPrice > price) {
+  //     symbolWithPrice = nowPrice + " Up";
+  //   } else {
+  //     symbolWithPrice = nowPrice + " Down";
+  //   }
+  symbolWithPrice = nowPrice > price ? nowPrice + " Up" : nowPrice + " Down";
 
   console.log(`Name : ${name}\nSymbol : ${sym}\nPrice : ${symbolWithPrice}\nTime : ${time}
     `);
   price = nowPrice;
-}, 1500);
+}, 2000);
